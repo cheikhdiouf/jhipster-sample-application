@@ -1,0 +1,25 @@
+{
+  "premiereProjetApp": {
+    "rendezVous": {
+      "home": {
+        "title": "Rendez Vous",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Rendez Vous",
+        "createOrEditLabel": "Create or edit a Rendez Vous",
+        "notFound": "No Rendez Vous found"
+      },
+      "created": "A new Rendez Vous is created with identifier {{ param }}",
+      "updated": "A Rendez Vous is updated with identifier {{ param }}",
+      "deleted": "A Rendez Vous is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Rendez Vous {{ id }}?"
+      },
+      "detail": {
+        "title": "Rendez Vous"
+      },
+      "id": "ID",
+      "dateRendezVous": "Date Rendez Vous",
+      "heureRendezVous": "Heure Rendez Vous"
+    }
+  }
+}

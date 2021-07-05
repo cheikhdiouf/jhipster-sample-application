@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity Consultation.
+    -->
+    <changeSet id="20210705143334-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="rendez_vous_id"
+                                 baseTableName="consultation"
+                                 constraintName="fk_consultation__rendez_vous_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="rendez_vous"/>
+    </changeSet>
+</databaseChangeLog>
