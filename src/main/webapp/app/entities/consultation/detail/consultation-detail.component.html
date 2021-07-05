@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="consultation">
+      <h2 data-cy="consultationDetailsHeading"><span jhiTranslate="premiereProjetApp.consultation.detail.title">Consultation</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ consultation.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="premiereProjetApp.consultation.dateComsultation">Date Comsultation</span></dt>
+        <dd>
+          <span>{{ consultation.dateComsultation | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="premiereProjetApp.consultation.prixConsultation">Prix Consultation</span></dt>
+        <dd>
+          <span>{{ consultation.prixConsultation }}</span>
+        </dd>
+        <dt><span jhiTranslate="premiereProjetApp.consultation.rapportConsultation">Rapport Consultation</span></dt>
+        <dd>
+          <span>{{ consultation.rapportConsultation }}</span>
+        </dd>
+        <dt><span jhiTranslate="premiereProjetApp.consultation.rendezVous">Rendez Vous</span></dt>
+        <dd>
+          <div *ngIf="consultation.rendezVous">
+            <a [routerLink]="['/rendez-vous', consultation.rendezVous?.id, 'view']">{{ consultation.rendezVous?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/consultation', consultation.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -43,7 +43,9 @@
     "devServerPort": 4200,
     "clientTheme": "none",
     "clientThemeVariant": "",
-    "reactive": false
+    "reactive": false,
+    "entities": ["Medecine", "RendezVous", "Patient", "Consultation"],
+    "lastLiquibaseTimestamp": 1625495614000
   },
   "git-provider": "GitHub",
   "git-company": "cheikhdiouf",

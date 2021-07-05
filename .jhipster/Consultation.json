@@ -1,0 +1,36 @@
+{
+  "name": "Consultation",
+  "fields": [
+    {
+      "fieldName": "dateComsultation",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "prixConsultation",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "rapportConsultation",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "rendezVous",
+      "otherEntityRelationshipName": "consultation",
+      "relationshipName": "rendezVous",
+      "ownerSide": true
+    }
+  ],
+  "entityTableName": "consultation",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210705143334"
+}

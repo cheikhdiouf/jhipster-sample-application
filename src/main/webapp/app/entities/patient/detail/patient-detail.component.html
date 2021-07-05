@@ -1,0 +1,58 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="patient">
+      <h2 data-cy="patientDetailsHeading"><span jhiTranslate="premiereProjetApp.patient.detail.title">Patient</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ patient.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="premiereProjetApp.patient.nom">Nom</span></dt>
+        <dd>
+          <span>{{ patient.nom }}</span>
+        </dd>
+        <dt><span jhiTranslate="premiereProjetApp.patient.prenom">Prenom</span></dt>
+        <dd>
+          <span>{{ patient.prenom }}</span>
+        </dd>
+        <dt><span jhiTranslate="premiereProjetApp.patient.email">Email</span></dt>
+        <dd>
+          <span>{{ patient.email }}</span>
+        </dd>
+        <dt><span jhiTranslate="premiereProjetApp.patient.telephone">Telephone</span></dt>
+        <dd>
+          <span>{{ patient.telephone }}</span>
+        </dd>
+        <dt><span jhiTranslate="premiereProjetApp.patient.adresse">Adresse</span></dt>
+        <dd>
+          <span>{{ patient.adresse }}</span>
+        </dd>
+        <dt><span jhiTranslate="premiereProjetApp.patient.dateNaissance">Date Naissance</span></dt>
+        <dd>
+          <span>{{ patient.dateNaissance | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="premiereProjetApp.patient.rendezVous">Rendez Vous</span></dt>
+        <dd>
+          <div *ngIf="patient.rendezVous">
+            <a [routerLink]="['/rendez-vous', patient.rendezVous?.id, 'view']">{{ patient.rendezVous?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/patient', patient.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>
