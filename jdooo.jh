@@ -1,0 +1,66 @@
+
+entity Medecine { 
+	nom String,
+    prenom String,
+    email  String,
+    telephone String,
+    specialite String
+}
+
+entity RendezVous {
+	dateRendezVous LocalDate,
+    heureRendezVous ZonedDateTime
+}
+
+// an ignored comment
+/** not an ignored comment */
+entity Patient {
+	nom String,
+    prenom String,
+    email String,
+    telephone String,
+    adresse String,
+    dateNaissance LocalDate
+}
+
+entity Consultation {
+	dateComsultation LocalDate,
+    prixConsultation Double,
+    rapportConsultation String
+}
+
+/**
+ * Task entity.
+ * @author The JHipster team.
+ */
+enum Language {
+    FRENCH, ENGLISH, SPANISH
+}
+
+relationship OneToOne {
+	Patient{rendezVous} to RendezVous
+}
+relationship OneToOne {
+	Medecine{rendezVous} to RendezVous
+}
+relationship OneToOne {
+	Consultation{rendezVous} to RendezVous
+}
+
+
+
+
+
+// defining multiple oneToOne relationships
+
+// Set pagination options
+
+
+// Use Data Transfer Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
